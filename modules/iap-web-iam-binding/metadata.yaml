@@ -65,10 +65,11 @@ spec:
     roles:
       - level: Project
         roles:
-          - roles/owner
+          - roles/iap.admin 
+          - roles/browser 
     services:
+      - iap.googleapis.com
       - cloudresourcemanager.googleapis.com
-      - storage-api.googleapis.com
       - serviceusage.googleapis.com
     providerVersions:
       - source: hashicorp/google
