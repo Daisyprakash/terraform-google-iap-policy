@@ -15,7 +15,7 @@
  */
 
 module "iap_web_iam_binding" {
-  source = "Daisyprakash/iap-policy/google//modules/iap-web-iam-binding"
+  source = "../../modules/iap-web-iam-binding"
 
   project_id = var.project_id
   role       = var.role
