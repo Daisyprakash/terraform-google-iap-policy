@@ -22,8 +22,8 @@ spec:
   info:
     title: IAP Web IAM Binding
     source:
-      repo: /modules/iap_web_iam_binding
-      dir: /modules/iap-web-iam-binding
+      repo: https://github.com/Daisyprakash/terraform-google-iap-policy.git
+      sourceType: git
     version: 0.0.1
     actuationTool:
       flavor: Terraform
