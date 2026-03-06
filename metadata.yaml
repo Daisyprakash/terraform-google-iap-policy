@@ -24,24 +24,8 @@ spec:
     source:
       repo: https://github.com/Daisyprakash/terraform-google-iap-policy.git
       sourceType: git
-    description:
-      tagline: This is an auto-generated module.
-      detailed: "This module was generated from "
-      preDeploy: To deploy this blueprint you must have an active billing account and billing permissions.
-    icon: assets/icon.png
-    costEstimate:
-      description: Blueprint cost details
-      url: https://cloud.google.com/products/calculator?id=02fb0c45-cc29-4567-8cc6-f72ac9024add
+    description: {}
   content:
-    architecture:
-      diagramUrl: https://www.link-to-architecture-diagram.com
-      description:
-        - 1. Architecture description step no. 1
-        - 2. Architecture description step no. 2
-        - 3. Architecture description step no. N
-    documentation:
-      - title: Hosting a Static Website
-        url: https://cloud.google.com/storage/docs/hosting-static-website
     subBlueprints:
       - name: iap-web-iam-binding
         location: modules/iap-web-iam-binding
