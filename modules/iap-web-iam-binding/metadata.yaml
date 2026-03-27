@@ -24,7 +24,8 @@ spec:
     source:
       repo: https://github.com/Daisyprakash/terraform-google-iap-policy.git
       sourceType: git
-    version: 0.0.2
+      dir: /modules/iap-web-iam-binding
+    version: 0.0.1
     actuationTool:
       flavor: Terraform
       version: ">= 0.13"
@@ -32,8 +33,8 @@ spec:
     icon: assets/icon.png
   content:
     examples:
-      - name: iap-web-iam-binding-example
-        location: examples/iap-web-iam-binding-example
+      - name: iap_web_iam_binding
+        location: examples/iap_web_iam_binding
   interfaces:
     variables:
       - name: project_id

@@ -15,17 +15,16 @@
 apiVersion: blueprints.cloud.google.com/v1alpha1
 kind: BlueprintMetadata
 metadata:
-  name: terraform-google-iap-policy-iap-agent-registry-agent-iam
+  name: terraform-google-iap-policy-iap-agent-registry-mcp-server-iam
   annotations:
     config.kubernetes.io/local-config: "true"
 spec:
   info:
-    title: IAP Agent Registry Agent IAM Binding
+    title: IAP Agent Registry MCP Server IAM Binding
     source:
       repo: https://github.com/Daisyprakash/terraform-google-iap-policy.git
       sourceType: git
-      dir: /modules/iap-agent-registry-agent-iam
-    version: 0.0.2
+      dir: /modules/iap-agent-registry-mcp-server-iam-policy
     actuationTool:
       flavor: Terraform
       version: ">= 0.13"
@@ -45,8 +44,8 @@ spec:
         description: The location of the resource.
         varType: string
         required: true
-      - name: agent_id
-        description: The ID of the Agent Registry agent.
+      - name: mcp_server_id
+        description: The ID of the Agent Registry MCP Server.
         varType: string
         required: true
     outputs:
