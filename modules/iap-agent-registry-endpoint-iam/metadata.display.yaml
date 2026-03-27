@@ -1,0 +1,45 @@
+# Copyright 2026 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+apiVersion: blueprints.cloud.google.com/v1alpha1
+kind: BlueprintMetadata
+metadata:
+  name: terraform-google-iap-policy-iap-agent-registry-endpoint-iam-display
+  annotations:
+    config.kubernetes.io/local-config: "true"
+spec:
+  info:
+    title: IAP Agent Registry Endpoint IAM Binding
+    source:
+      repo: https://github.com/Daisyprakash/terraform-google-iap-policy.git
+      sourceType: git
+      dir: /modules/iap-agent-registry-endpoint-iam
+  ui:
+    input:
+      variables:
+        endpoint_id:
+          name: endpoint_id
+          title: Endpoint Id
+        location:
+          name: location
+          title: Location
+        project_id:
+          name: project_id
+          title: Project Id
+    runtime:
+      outputs:
+        etag:
+          visibility: VISIBILITY_ROOT
+        policy_data:
+          visibility: VISIBILITY_ROOT

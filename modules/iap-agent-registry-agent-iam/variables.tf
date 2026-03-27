@@ -28,23 +28,3 @@ variable "agent_id" {
   type        = string
   description = "The ID of the Agent Registry agent."
 }
-
-variable "role" {
-  type        = string
-  description = "The role that should be applied. E.g., roles/iap.egressor."
-}
-
-variable "members" {
-  type        = list(string)
-  description = "Identities that will be granted the privilege in role."
-}
-
-variable "condition" {
-  description = "An optional IAM Condition for the binding."
-  type = object({
-    title       = string
-    description = optional(string)
-    expression  = string
-  })
-  default = null
-}

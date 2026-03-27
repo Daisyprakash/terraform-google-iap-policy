@@ -14,21 +14,9 @@
  * limitations under the License.
  */
 
-resource "google_iap_agent_registry_mcp_server_iam_binding" "binding" {
+data "google_iap_agent_registry_mcp_server_iam_policy" "policy" {
+  provider      = google-nightly
   project       = var.project_id
   location      = var.location
   mcp_server_id = var.mcp_server_id
-  role          = var.role
-  members       = var.members
-
-  dynamic "condition" {
-    for_each = var.condition != null ? [var.condition] : []
-    content {
-      title       = condition.value.title
-      description = lookup(condition.value, "description", null)
-      expression  = condition.value.expression
-    }
-  }
 }
-
-

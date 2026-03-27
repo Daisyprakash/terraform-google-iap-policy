@@ -29,22 +29,3 @@ variable "mcp_server_id" {
   description = "The ID of the Agent Registry MCP Server."
 }
 
-variable "role" {
-  type        = string
-  description = "The role that should be applied."
-}
-
-variable "members" {
-  type        = list(string)
-  description = "Identities that will be granted the privilege in role."
-}
-
-variable "condition" {
-  description = "An optional IAM Condition for the binding."
-  type = object({
-    title       = string
-    description = optional(string)
-    expression  = string
-  })
-  default = null
-}

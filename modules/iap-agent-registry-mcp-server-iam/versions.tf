@@ -14,10 +14,11 @@
  * limitations under the License.
  */
 terraform {
+  required_version = ">= 0.13"
   required_providers {
-    google-internal = {
-      source  = "internal/terraform-provider-google-internal"
-      version = ">= 1.0.0"
+    google-nightly = {
+      source  = "hashicorp/google-nightly"
+      version = "2026.3.26-7.25.0"
     }
   }
 }
