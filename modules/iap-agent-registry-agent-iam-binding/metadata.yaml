@@ -25,7 +25,7 @@ spec:
       repo: https://github.com/Daisyprakash/terraform-google-iap-policy.git
       sourceType: git
       dir: /modules/iap-agent-registry-agent-iam-binding
-    version: 0.0.2
+    version: 0.0.3
     actuationTool:
       flavor: Terraform
       version: ">= 0.13"
@@ -43,6 +43,12 @@ spec:
         description: The ID of the Agent Registry agent.
         varType: string
         required: true
+        connections:
+          - source:
+              source: github.com/vandnagarggoogle/terraform-google-agent-registry//modules/agent-registry-agent
+              version: ">=0.0.14"
+            spec:
+              outputExpr: agent_id
       - name: role
         description: The role that should be applied. E.g., roles/iap.egressor.
         varType: string

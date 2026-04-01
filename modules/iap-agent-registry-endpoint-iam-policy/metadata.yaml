@@ -25,7 +25,7 @@ spec:
       repo: https://github.com/Daisyprakash/terraform-google-iap-policy.git
       sourceType: git
       dir: /modules/iap-agent-registry-endpoint-iam-policy
-    version: 0.0.2
+    version: 0.0.3
     actuationTool:
       flavor: Terraform
       version: ">= 0.13"
