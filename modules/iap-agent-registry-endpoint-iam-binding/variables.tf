@@ -1,0 +1,52 @@
+/**
+ * Copyright 2021 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+variable "project_id" {
+  type        = string
+  description = "The ID of the project in which the resource belongs."
+  default     = null
+}
+
+variable "location" {
+  type        = string
+  description = "The location of the resource."
+  default     = null
+}
+
+variable "endpoint_id" {
+  type        = string
+  description = "The ID of the Agent Registry endpoint."
+}
+
+variable "role" {
+  type        = string
+  description = "The role that should be applied. E.g., roles/iap.egressor."
+}
+
+variable "members" {
+  type        = list(string)
+  description = "Identities that will be granted the privilege in the role."
+}
+
+variable "condition" {
+  description = "An optional IAM Condition for the binding."
+  type = object({
+    title       = string
+    description = optional(string)
+    expression  = string
+  })
+  default = null
+}
