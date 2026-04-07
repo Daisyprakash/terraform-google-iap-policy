@@ -22,7 +22,7 @@ spec:
   info:
     title: terraform-google-iap-policy
     source:
-      repo: https://github.com/Daisyprakash/terraform-google-iap-policy.git
+      repo: https://github.com/GoogleCloudPlatform/terraform-google-iap-policy.git
       sourceType: git
   ui:
     input: {}
