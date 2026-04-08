@@ -18,4 +18,3 @@ output "etag" {
   value       = google_iap_agent_registry_agent_iam_binding.binding.etag
   description = "The etag of the IAM binding."
 }
-
