@@ -17,13 +17,11 @@
 variable "project_id" {
   type        = string
   description = "The ID of the project in which the resource belongs."
-  default     = null
 }
 
 variable "location" {
   type        = string
   description = "The location of the resource."
-  default     = null
 }
 
 variable "mcp_server_id" {

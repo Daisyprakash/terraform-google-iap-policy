@@ -14,15 +14,12 @@
  * limitations under the License.
  */
 
-
-
-module "iap_agent_registry_agent_iam_binding" {
-  source = "../../modules/iap-agent-registry-agent-iam-binding"
-
-  project_id = var.project_id
-  location   = "us-central1"
-  agent_id   = var.agent_id
-  role       = "roles/iap.egressor"
-  members    = ["user:example@example.com"]
+output "project_id" {
+  description = "The project ID used by this example."
+  value       = var.project_id
 }
 
+output "iap_agent_registry_agent_iam_binding_etag" {
+  description = "The etag for the IAP Agent Registry agent IAM binding."
+  value       = module.iap_agent_registry_agent_iam_binding.etag
+}

@@ -16,13 +16,12 @@
 
 
 
-module "iap_agent_registry_agent_iam_binding" {
-  source = "../../modules/iap-agent-registry-agent-iam-binding"
+module "iap_agent_registry_mcp_server_iam_binding" {
+  source = "../../modules/iap-agent-registry-mcp-server-iam-binding"
 
-  project_id = var.project_id
-  location   = "us-central1"
-  agent_id   = var.agent_id
-  role       = "roles/iap.egressor"
-  members    = ["user:example@example.com"]
+  project_id    = var.project_id
+  location      = "us-central1"
+  mcp_server_id = var.mcp_server_id
+  role          = "roles/iap.egressor"
+  members       = ["user:example@example.com"]
 }
-
