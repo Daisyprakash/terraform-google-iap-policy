@@ -14,15 +14,14 @@
  * limitations under the License.
  */
 
-
-
-module "iap_agent_registry_agent_iam_binding" {
-  source = "../../modules/iap-agent-registry-agent-iam-binding"
-
-  project_id = var.project_id
-  location   = "us-central1"
-  agent_id   = var.agent_id
-  role       = "roles/iap.egressor"
-  members    = ["user:example@example.com"]
+variable "project_id" {
+  description = "The ID of the project where resources will be created."
+  type        = string
 }
 
+
+
+variable "endpoint_id" {
+  description = "The ID of the Agent Registry endpoint."
+  type        = string
+}

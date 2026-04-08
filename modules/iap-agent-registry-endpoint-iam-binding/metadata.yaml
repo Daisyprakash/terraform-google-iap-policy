@@ -35,14 +35,20 @@ spec:
     examples:
       - name: iap-agent-registry-agent-iam-binding
         location: examples/iap-agent-registry-agent-iam-binding
+      - name: iap-agent-registry-endpoint-iam-binding
+        location: examples/iap-agent-registry-endpoint-iam-binding
+      - name: iap-agent-registry-mcp-server-iam-binding
+        location: examples/iap-agent-registry-mcp-server-iam-binding
   interfaces:
     variables:
       - name: project_id
         description: The ID of the project in which the resource belongs.
         varType: string
+        required: true
       - name: location
         description: The location of the resource.
         varType: string
+        required: true
       - name: endpoint_id
         description: The ID of the Agent Registry endpoint.
         varType: string

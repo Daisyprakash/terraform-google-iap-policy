@@ -14,15 +14,13 @@
  * limitations under the License.
  */
 
+terraform {
+  required_version = ">= 1.3, < 2.0"
 
-
-module "iap_agent_registry_agent_iam_binding" {
-  source = "../../modules/iap-agent-registry-agent-iam-binding"
-
-  project_id = var.project_id
-  location   = "us-central1"
-  agent_id   = var.agent_id
-  role       = "roles/iap.egressor"
-  members    = ["user:example@example.com"]
+  required_providers {
+    google-nightly = {
+      source  = "hashicorp/google-nightly"
+      version = "2026.3.26-7.25.0"
+    }
+  }
 }
-
