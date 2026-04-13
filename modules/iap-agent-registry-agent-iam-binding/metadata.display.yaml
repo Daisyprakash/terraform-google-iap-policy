@@ -52,5 +52,4 @@ spec:
     runtime:
       outputs:
         iap_policy_id:
-          name: iap_policy_id
-          title: IAP Policy Id
+          visibility: VISIBILITY_ROOT
