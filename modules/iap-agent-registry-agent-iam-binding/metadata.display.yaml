@@ -28,6 +28,9 @@ spec:
   ui:
     input:
       variables:
+        agent_engine_effective_ids:
+          name: agent_engine_effective_ids
+          title: Agent Engine Effective Ids
         agent_id:
           name: agent_id
           title: Agent Id
@@ -46,3 +49,8 @@ spec:
         role:
           name: role
           title: Role
+    runtime:
+      outputs:
+        iap_policy_id:
+          name: iap_policy_id
+          title: IAP Policy Id

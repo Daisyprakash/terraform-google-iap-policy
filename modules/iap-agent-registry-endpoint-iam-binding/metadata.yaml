@@ -55,8 +55,8 @@ spec:
         required: true
         connections:
           - source:
-              source: github.com/vandnagarggoogle/terraform-google-agent-registry//modules/agent-registry-endpoint
-              version: ">=0.0.14"
+              source: github.com/GoogleCloudPlatform/terraform-google-agent-registry//modules/agent-registry-endpoint
+              version: ">=0.2.5"
             spec:
               outputExpr: endpoint_id
       - name: role
@@ -75,9 +75,21 @@ spec:
               description = optional(string)
               expression  = string
             })
+      - name: agent_engine_effective_ids
+        description: List of Reasoning Engine effective identities to be dynamically formatted and added to the IAM binding members.
+        varType: list(string)
+        defaultValue: []
+        connections:
+          - source:
+              source: github.com/GoogleCloudPlatform/terraform-google-vertex-ai//modules/agent-engine-nightly
+              version: ">= 5.1.0"
+            spec:
+              outputExpr: "[effective_identity]"
     outputs:
       - name: etag
         description: The etag of the IAM binding.
+      - name: iap_policy_id
+        description: The ID of the IAM binding.
   requirements:
     roles:
       - level: Project

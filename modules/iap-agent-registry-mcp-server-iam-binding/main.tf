@@ -14,6 +14,15 @@
  * limitations under the License.
  */
 
+locals {
+  formatted_agent_ids = [
+    for id in var.agent_engine_effective_ids :
+    startswith(id, "agents.global") ? "principal://${id}" : (
+      endswith(id, "iam.gserviceaccount.com") ? "serviceAccount:${id}" : id
+    )
+  ]
+}
+
 resource "google_iap_agent_registry_mcp_server_iam_binding" "binding" {
   provider = google-nightly
 
@@ -21,7 +30,7 @@ resource "google_iap_agent_registry_mcp_server_iam_binding" "binding" {
   location      = var.location
   mcp_server_id = var.mcp_server_id
   role          = var.role
-  members       = var.members
+  members       = concat(var.members, local.formatted_agent_ids)
 
   dynamic "condition" {
     for_each = var.condition == null ? [] : [var.condition]
