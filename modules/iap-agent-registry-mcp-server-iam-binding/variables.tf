@@ -48,3 +48,9 @@ variable "condition" {
   })
   default = null
 }
+
+variable "agent_engine_effective_ids" {
+  type        = list(string)
+  description = "List of Reasoning Engine effective identities to be dynamically formatted and added to the IAM binding members."
+  default     = []
+}

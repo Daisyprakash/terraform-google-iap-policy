@@ -5,6 +5,7 @@
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| agent\_engine\_effective\_ids | List of Reasoning Engine effective identities to be dynamically formatted and added to the IAM binding members. | `list(string)` | `[]` | no |
 | agent\_id | The ID of the Agent Registry agent. | `string` | n/a | yes |
 | condition | An optional IAM Condition for the binding. | <pre>object({<br>    title       = string<br>    description = optional(string)<br>    expression  = string<br>  })</pre> | `null` | no |
 | location | The location of the resource. | `string` | n/a | yes |
@@ -17,5 +18,6 @@
 | Name | Description |
 |------|-------------|
 | etag | The etag of the IAM binding. |
+| iap\_policy\_id | The ID of the IAM binding. |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
