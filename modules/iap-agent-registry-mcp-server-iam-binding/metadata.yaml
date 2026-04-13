@@ -94,11 +94,17 @@ spec:
     roles:
       - level: Project
         roles:
-          - roles/owner
+          - roles/iap.admin
+          - roles/resourcemanager.projectIamAdmin
     services:
       - cloudresourcemanager.googleapis.com
       - storage-api.googleapis.com
-      - serviceusage.googleapis.com
+      - serviceusage.googleapis.com 
+      - iam.googleapis.com
+      - agentregistry.googleapis.com
+      - aiplatform.googleapis.com
+      - apphub.googleapis.com
+      - iap.googleapis.com
     providerVersions:
       - source: hashicorp/google-nightly
         version: 2026.3.26-7.25.0
